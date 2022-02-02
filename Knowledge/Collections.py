@@ -3,6 +3,7 @@
 import collections
 from collections import Counter
 from collections import namedtuple
+from collections import deque
 
 
 #Containers 
@@ -42,6 +43,21 @@ dd = Counter({'a': 2, 'b': 3, 'c': 0})
 #print(f"Union: {cc | dd}") #union
 
 #2 deque
+
+#Faster to add elements to the end and start of a list
+d = deque('Hello')
+#d.append('3')
+#d.append(5)
+#d.appendleft('ola')
+d.pop()
+d.popleft()
+
+#d.clear()
+d.extend('30')
+d.extend([30])#This is how you extend the list with a int value
+
+print(d)
+
 #3 namedTuple()
 
 #namedtuple functioning is like a class Where you instance that class in an object like Point
@@ -50,9 +66,9 @@ dd = Counter({'a': 2, 'b': 3, 'c': 0})
 Point = namedtuple('Point', {'x':0, 'y':0, 'z':0}) #in the parameters you can use any iterable objects
 Words = namedtuple('Words', 'a b c')
 newP = Point(3,4,5)
-print(newP[1])
-print(newP._asdict())
-print(newP._fields)
+#print(newP[1])
+#print(newP._asdict())
+#print(newP._fields)
 
 #To change a value into that tuple, we have to use the ._replace() in a bit different way 
 #We have to overwrithe newP with the newP with the value we want to replace
@@ -60,11 +76,11 @@ print(newP._fields)
 # Wrong / newP._replace(y=8)
 # Right:
 newP = newP._replace(y=8)
-print(newP)
+#print(newP)
 
 #p2 = Point._make(['a', 'b', 'c'])
 p2 = Words('A', 'B', 'C')
-print(p2)
+#print(p2)
 
 #4 orderdDict
 #5 defaultdict 
